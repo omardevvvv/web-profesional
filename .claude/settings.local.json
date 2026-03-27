@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(npx create-next-app@latest temp-project --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(printf \"n\\\\nn\\\\n\")",
+      "Bash(npx create-next-app@latest temp-project --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(yes \"n\")",
+      "Bash(cp -r temp-project/* .)",
+      "Bash(cp temp-project/.* .)",
+      "Bash(rm -rf temp-project)",
+      "Bash(rm -f AGENTS.md CLAUDE.md README.md eslint.config.mjs next-env.d.ts next.config.ts)",
+      "Bash(cp -r temp-project/. .)",
+      "Bash(rm -rf node_modules)",
+      "Bash(rm -rf temp-project/node_modules)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -d --defaults)",
+      "Bash(npx shadcn@latest add input textarea card dialog table tabs dropdown-menu accordion badge separator sheet avatar label select switch toast sonner -y)",
+      "Bash(npx shadcn@latest add input textarea card dialog table tabs dropdown-menu accordion badge separator sheet avatar label select switch sonner -y)",
+      "Bash(npx prisma:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const l = require\\(''lucide-react''\\); const keys = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''linkedin''\\)\\); console.log\\(keys\\);\")",
+      "Bash(grep -v \"^$\")"
+    ]
+  }
+}
