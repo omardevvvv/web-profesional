@@ -4,8 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function getContactInfo() {
   return prisma.contactInfo.findFirst();
 }
@@ -43,6 +41,7 @@ export async function submitContactForm(data: {
 
   // Send notification email if API key is configured
   if (process.env.RESEND_API_KEY) {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const contactInfo = await prisma.contactInfo.findFirst();
     const toEmail = contactInfo?.email || "info@despacho.com";
 
