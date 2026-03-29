@@ -51,7 +51,7 @@ export function Navbar() {
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={!isHome && item.href.startsWith("#") ? `/${item.href}` : item.href}
                 className="text-white/80 hover:text-[#C4A882] text-sm font-medium transition-colors duration-200"
               >
                 {item.label}
@@ -61,7 +61,7 @@ export function Navbar() {
               asChild
               className="bg-[#C4A882] hover:bg-[#D4B896] text-[#1A1A1A] font-semibold text-sm px-5"
             >
-              <Link href="#contacto">Consulta Gratuita</Link>
+              <Link href={isHome ? "#contacto" : "/#contacto"}>Consulta Gratuita</Link>
             </Button>
           </div>
 
@@ -81,7 +81,7 @@ export function Navbar() {
                 {NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={!isHome && item.href.startsWith("#") ? `/${item.href}` : item.href}
                     onClick={() => setOpen(false)}
                     className="text-white/80 hover:text-[#C4A882] text-base font-medium transition-colors py-3 pl-2 border-b border-white/5"
                   >
@@ -92,7 +92,7 @@ export function Navbar() {
                   asChild
                   className="bg-[#C4A882] hover:bg-[#D4B896] text-[#1A1A1A] font-semibold mt-6"
                 >
-                  <Link href="#contacto" onClick={() => setOpen(false)}>
+                  <Link href={isHome ? "#contacto" : "/#contacto"} onClick={() => setOpen(false)}>
                     Consulta Gratuita
                   </Link>
                 </Button>
