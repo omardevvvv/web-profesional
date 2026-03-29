@@ -98,16 +98,18 @@ model Attachment {
 }
 
 model ContactInfo {
-  id          String   @id @default(cuid())
-  phone       String?
-  email       String?
-  address     String?  @db.Text
-  mapEmbedUrl String?  @db.Text
-  schedule    String?  @db.Text
-  facebook    String?
-  instagram   String?
-  linkedIn    String?
-  updatedAt   DateTime @updatedAt
+  id                String   @id @default(cuid())
+  phone             String?
+  email             String?
+  address           String?  @db.Text
+  mapEmbedUrl       String?  @db.Text
+  schedule          String?  @db.Text
+  facebook          String?
+  instagram         String?
+  linkedIn          String?
+  notificationEmail String?
+  senderEmail       String?
+  updatedAt         DateTime @updatedAt
 }
 
 model ContactSubmission {

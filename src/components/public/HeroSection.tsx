@@ -55,7 +55,7 @@ export function HeroSection({
           >
             <span className="w-2 h-2 bg-[#C4A882] rounded-full animate-pulse" />
             <span className="text-[#C4A882] text-sm font-medium">
-              Despacho Profesional en Madrid
+              Despacho Profesional en Tenerife
             </span>
           </motion.div>
 
@@ -115,7 +115,7 @@ export function HeroSection({
               asChild
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 text-base px-8 h-12"
+              className="border-white/50 bg-transparent text-white hover:bg-white/10 hover:border-white/70 text-base px-8 h-12"
             >
               <Link href="#servicios">Ver Servicios</Link>
             </Button>

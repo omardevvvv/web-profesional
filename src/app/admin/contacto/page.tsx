@@ -14,6 +14,7 @@ interface FormData {
   phone: string; email: string; address: string;
   mapEmbedUrl: string; schedule: string;
   facebook: string; instagram: string; linkedIn: string;
+  notificationEmail: string; senderEmail: string;
 }
 
 export default function ContactoAdminPage() {
@@ -31,6 +32,8 @@ export default function ContactoAdminPage() {
         facebook: data.facebook ?? undefined,
         instagram: data.instagram ?? undefined,
         linkedIn: data.linkedIn ?? undefined,
+        notificationEmail: data.notificationEmail ?? undefined,
+        senderEmail: data.senderEmail ?? undefined,
       });
     });
   }, [reset]);
@@ -77,6 +80,23 @@ export default function ContactoAdminPage() {
           <Label className="text-[#1A1A1A] font-medium">URL de Google Maps (iframe embed)</Label>
           <Input {...register("mapEmbedUrl")} placeholder="https://www.google.com/maps/embed?..." className="mt-1.5" />
         </div>
+        <div className="border-t pt-5">
+          <p className="text-sm font-semibold text-[#1A1A1A] mb-1">Notificaciones de contacto</p>
+          <p className="text-xs text-gray-400 mb-4">Configuración para recibir por email los mensajes del formulario de contacto. Requiere <code className="bg-gray-100 px-1 rounded">RESEND_API_KEY</code> en las variables de entorno.</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label className="text-[#1A1A1A] font-medium">Email de notificación</Label>
+              <Input type="email" {...register("notificationEmail")} placeholder="donde recibes los mensajes" className="mt-1.5" />
+              <p className="text-xs text-gray-400 mt-1">Email donde llegarán los mensajes del formulario</p>
+            </div>
+            <div>
+              <Label className="text-[#1A1A1A] font-medium">Email remitente (Resend)</Label>
+              <Input type="email" {...register("senderEmail")} placeholder="noreply@tudominio.com" className="mt-1.5" />
+              <p className="text-xs text-gray-400 mt-1">Debe ser un dominio verificado en Resend</p>
+            </div>
+          </div>
+        </div>
+
         <div className="border-t pt-5">
           <p className="text-sm font-semibold text-[#1A1A1A] mb-4">Redes Sociales</p>
           <div className="grid grid-cols-3 gap-4">
