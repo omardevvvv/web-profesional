@@ -21,10 +21,10 @@ export function FaqSection({ items }: FaqSectionProps) {
     <section id="faq" className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <span className="text-[#D4A843] font-medium text-sm uppercase tracking-widest">
+          <span className="text-[#7A5230] font-medium text-sm uppercase tracking-widest">
             Preguntas Frecuentes
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0A1628] mt-3 mb-4 font-[var(--font-heading)]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A] mt-3 mb-4 font-[var(--font-heading)]">
             Resolvemos Sus Dudas
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
@@ -41,7 +41,7 @@ export function FaqSection({ items }: FaqSectionProps) {
                 value={item.id}
                 className="border border-gray-100 rounded-xl px-6 shadow-sm"
               >
-                <AccordionTrigger className="text-[#0A1628] font-medium text-left hover:text-[#D4A843] hover:no-underline py-5">
+                <AccordionTrigger className="text-[#1A1A1A] font-medium text-left hover:text-[#7A5230] hover:no-underline py-5">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-500 leading-relaxed pb-5">

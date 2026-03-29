@@ -11,7 +11,7 @@ export default async function MensajesPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-[#0A1628] font-[var(--font-heading)]">Mensajes de Contacto</h1>
+        <h1 className="text-2xl font-bold text-[#1A1A1A] font-[var(--font-heading)]">Mensajes de Contacto</h1>
         <p className="text-gray-500 mt-1">{submissions.filter(s => !s.isRead).length} mensajes sin leer</p>
       </div>
 
@@ -24,20 +24,20 @@ export default async function MensajesPage() {
         )}
         {submissions.map((msg) => (
           <div key={msg.id}
-            className={`bg-white rounded-xl p-6 shadow-sm border-l-4 ${msg.isRead ? "border-gray-100" : "border-[#D4A843]"}`}>
+            className={`bg-white rounded-xl p-6 shadow-sm border-l-4 ${msg.isRead ? "border-gray-100" : "border-[#C4A882]"}`}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3 flex-1">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${msg.isRead ? "bg-gray-100" : "bg-[#D4A843]/10"}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${msg.isRead ? "bg-gray-100" : "bg-[#C4A882]/10"}`}>
                   {msg.isRead
                     ? <MailOpen className="w-4 h-4 text-gray-400" />
-                    : <Mail className="w-4 h-4 text-[#D4A843]" />
+                    : <Mail className="w-4 h-4 text-[#C4A882]" />
                   }
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <p className="font-semibold text-[#0A1628] text-sm">{msg.name}</p>
+                    <p className="font-semibold text-[#1A1A1A] text-sm">{msg.name}</p>
                     {!msg.isRead && (
-                      <Badge className="bg-[#D4A843]/10 text-[#D4A843] hover:bg-[#D4A843]/10 text-xs px-2 py-0">Nuevo</Badge>
+                      <Badge className="bg-[#C4A882]/10 text-[#C4A882] hover:bg-[#C4A882]/10 text-xs px-2 py-0">Nuevo</Badge>
                     )}
                   </div>
                   <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-xs text-gray-400 mb-3">

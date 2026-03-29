@@ -11,10 +11,10 @@ export default async function FaqAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-[#0A1628] font-[var(--font-heading)]">FAQ</h1>
+          <h1 className="text-2xl font-bold text-[#1A1A1A] font-[var(--font-heading)]">FAQ</h1>
           <p className="text-gray-500 mt-1">Gestione las preguntas frecuentes</p>
         </div>
-        <Button asChild className="bg-[#0A1628] hover:bg-[#1A2A4A] text-white">
+        <Button asChild className="bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white">
           <Link href="/admin/faq/nuevo"><Plus className="w-4 h-4 mr-2" />Nueva pregunta</Link>
         </Button>
       </div>
@@ -32,7 +32,7 @@ export default async function FaqAdminPage() {
             {items.map((item) => (
               <tr key={item.id} className="hover:bg-gray-50/50">
                 <td className="px-6 py-4">
-                  <p className="font-medium text-[#0A1628] text-sm">{item.question}</p>
+                  <p className="font-medium text-[#1A1A1A] text-sm">{item.question}</p>
                   <p className="text-gray-400 text-xs mt-0.5 line-clamp-1">{item.answer}</p>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-500">{item.order}</td>

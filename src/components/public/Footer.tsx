@@ -6,21 +6,21 @@ export async function Footer() {
   const contact = await getContactInfo();
 
   return (
-    <footer className="bg-[#0A1628] text-white/70">
+    <footer className="bg-[#1A1A1A] text-white/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#D4A843] rounded-sm flex items-center justify-center">
-                <span className="text-[#0A1628] font-bold text-sm">D</span>
+              <div className="w-8 h-8 bg-[#C4A882] rounded-sm flex items-center justify-center">
+                <span className="text-[#1A1A1A] font-bold text-sm">L</span>
               </div>
               <span className="text-white font-semibold text-lg font-[var(--font-heading)]">
-                Despacho Contable
+                Laura Álvarez
               </span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              Asesoría contable y fiscal profesional. Más de 20 años de
+              Asesoría fiscal y contable. Más de 20 años de
               experiencia ayudando a empresas y particulares.
             </p>
           </div>
@@ -41,7 +41,7 @@ export async function Footer() {
                 <li key={s}>
                   <Link
                     href="#servicios"
-                    className="hover:text-[#D4A843] transition-colors"
+                    className="hover:text-[#C4A882] transition-colors"
                   >
                     {s}
                   </Link>
@@ -58,10 +58,10 @@ export async function Footer() {
             <ul className="space-y-3 text-sm">
               {contact?.phone && (
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#D4A843] shrink-0" />
+                  <Phone className="w-4 h-4 text-[#C4A882] shrink-0" />
                   <a
                     href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                    className="hover:text-[#D4A843] transition-colors"
+                    className="hover:text-[#C4A882] transition-colors"
                   >
                     {contact.phone}
                   </a>
@@ -69,10 +69,10 @@ export async function Footer() {
               )}
               {contact?.email && (
                 <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#D4A843] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#C4A882] shrink-0" />
                   <a
                     href={`mailto:${contact.email}`}
-                    className="hover:text-[#D4A843] transition-colors"
+                    className="hover:text-[#C4A882] transition-colors"
                   >
                     {contact.email}
                   </a>
@@ -80,7 +80,7 @@ export async function Footer() {
               )}
               {contact?.address && (
                 <li className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-[#D4A843] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#C4A882] shrink-0 mt-0.5" />
                   <span className="whitespace-pre-line">{contact.address}</span>
                 </li>
               )}
@@ -90,14 +90,14 @@ export async function Footer() {
 
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>
-            © {new Date().getFullYear()} Despacho Contable y Fiscal. Todos los
+            © {new Date().getFullYear()} Laura Álvarez – Asesoría Fiscal y Contable. Todos los
             derechos reservados.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-[#D4A843] transition-colors">
+            <Link href="#" className="hover:text-[#C4A882] transition-colors">
               Política de Privacidad
             </Link>
-            <Link href="#" className="hover:text-[#D4A843] transition-colors">
+            <Link href="#" className="hover:text-[#C4A882] transition-colors">
               Aviso Legal
             </Link>
           </div>

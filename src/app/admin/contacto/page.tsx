@@ -46,7 +46,7 @@ export default function ContactoAdminPage() {
     <div className="max-w-2xl">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-[#0A1628] font-[var(--font-heading)]">Contacto</h1>
+          <h1 className="text-2xl font-bold text-[#1A1A1A] font-[var(--font-heading)]">Contacto</h1>
           <p className="text-gray-500 mt-1">Gestione la información de contacto</p>
         </div>
         <Button asChild variant="outline">
@@ -57,44 +57,44 @@ export default function ContactoAdminPage() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white rounded-xl p-6 shadow-sm">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <Label className="text-[#0A1628] font-medium">Teléfono</Label>
+            <Label className="text-[#1A1A1A] font-medium">Teléfono</Label>
             <Input {...register("phone")} placeholder="+34 91 123 45 67" className="mt-1.5" />
           </div>
           <div>
-            <Label className="text-[#0A1628] font-medium">Email</Label>
+            <Label className="text-[#1A1A1A] font-medium">Email</Label>
             <Input type="email" {...register("email")} placeholder="info@despacho.com" className="mt-1.5" />
           </div>
         </div>
         <div>
-          <Label className="text-[#0A1628] font-medium">Dirección</Label>
+          <Label className="text-[#1A1A1A] font-medium">Dirección</Label>
           <Textarea {...register("address")} rows={2} className="mt-1.5 resize-none" />
         </div>
         <div>
-          <Label className="text-[#0A1628] font-medium">Horario de atención</Label>
+          <Label className="text-[#1A1A1A] font-medium">Horario de atención</Label>
           <Textarea {...register("schedule")} rows={3} placeholder="Lunes a Viernes: 9:00 - 18:00" className="mt-1.5 resize-none" />
         </div>
         <div>
-          <Label className="text-[#0A1628] font-medium">URL de Google Maps (iframe embed)</Label>
+          <Label className="text-[#1A1A1A] font-medium">URL de Google Maps (iframe embed)</Label>
           <Input {...register("mapEmbedUrl")} placeholder="https://www.google.com/maps/embed?..." className="mt-1.5" />
         </div>
         <div className="border-t pt-5">
-          <p className="text-sm font-semibold text-[#0A1628] mb-4">Redes Sociales</p>
+          <p className="text-sm font-semibold text-[#1A1A1A] mb-4">Redes Sociales</p>
           <div className="grid grid-cols-3 gap-4">
             <div>
-              <Label className="text-[#0A1628] font-medium text-xs">Facebook</Label>
+              <Label className="text-[#1A1A1A] font-medium text-xs">Facebook</Label>
               <Input {...register("facebook")} placeholder="https://..." className="mt-1.5" />
             </div>
             <div>
-              <Label className="text-[#0A1628] font-medium text-xs">Instagram</Label>
+              <Label className="text-[#1A1A1A] font-medium text-xs">Instagram</Label>
               <Input {...register("instagram")} placeholder="https://..." className="mt-1.5" />
             </div>
             <div>
-              <Label className="text-[#0A1628] font-medium text-xs">LinkedIn</Label>
+              <Label className="text-[#1A1A1A] font-medium text-xs">LinkedIn</Label>
               <Input {...register("linkedIn")} placeholder="https://..." className="mt-1.5" />
             </div>
           </div>
         </div>
-        <Button type="submit" disabled={loading} className="bg-[#0A1628] hover:bg-[#1A2A4A] text-white">
+        <Button type="submit" disabled={loading} className="bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white">
           <Save className="w-4 h-4 mr-2" />{loading ? "Guardando..." : "Guardar cambios"}
         </Button>
       </form>

@@ -2,8 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { ArrowRight, Tag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+
+interface Category { id: string; name: string; slug: string; }
 
 interface BlogCardProps {
   id: string;
@@ -14,6 +16,7 @@ interface BlogCardProps {
   publishedAt?: Date | null;
   author?: string | null;
   tags?: string[];
+  categories?: Category[];
 }
 
 export function BlogCard({
@@ -24,11 +27,12 @@ export function BlogCard({
   publishedAt,
   author,
   tags,
+  categories,
 }: BlogCardProps) {
   return (
-    <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#D4A843]/30 hover:shadow-lg hover:shadow-[#D4A843]/5 transition-all duration-300">
+    <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4A882]/40 hover:shadow-lg hover:shadow-[#C4A882]/10 transition-all duration-300">
       {/* Cover image */}
-      <div className="relative w-full h-48 bg-gradient-to-br from-[#0A1628] to-[#1A2A4A] overflow-hidden">
+      <div className="relative w-full h-48 bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] overflow-hidden">
         {coverImage ? (
           <Image
             src={coverImage}
@@ -38,7 +42,7 @@ export function BlogCard({
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[#D4A843]/30 text-6xl font-bold font-[var(--font-heading)]">
+            <span className="text-[#C4A882]/30 text-6xl font-bold font-[var(--font-heading)]">
               {title.charAt(0)}
             </span>
           </div>
@@ -47,14 +51,29 @@ export function BlogCard({
 
       {/* Content */}
       <div className="p-6">
-        {/* Tags */}
-        {tags && tags.length > 0 && (
+        {/* Categories */}
+        {categories && categories.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {categories.map(cat => (
+              <Link
+                key={cat.id}
+                href={`/blog?categoria=${cat.slug}`}
+                className="text-xs bg-[#C4A882]/15 text-[#7A5230] border border-[#C4A882]/30 px-2 py-0.5 rounded-full hover:bg-[#C4A882]/25 transition-colors"
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Tags (legacy) */}
+        {(!categories || categories.length === 0) && tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-3">
             {tags.slice(0, 2).map((tag) => (
               <Badge
                 key={tag}
                 variant="secondary"
-                className="text-xs bg-[#D4A843]/10 text-[#D4A843] border-[#D4A843]/20"
+                className="text-xs bg-[#C4A882]/15 text-[#7A5230] border-[#C4A882]/30"
               >
                 {tag}
               </Badge>
@@ -62,7 +81,7 @@ export function BlogCard({
           </div>
         )}
 
-        <h3 className="text-[#0A1628] font-semibold text-lg leading-snug mb-2 group-hover:text-[#D4A843] transition-colors font-[var(--font-heading)]">
+        <h3 className="text-[#1A1A1A] font-semibold text-lg leading-snug mb-2 group-hover:text-[#7A5230] transition-colors font-[var(--font-heading)]">
           <Link href={`/blog/${slug}`}>{title}</Link>
         </h3>
 
@@ -83,7 +102,7 @@ export function BlogCard({
           </div>
           <Link
             href={`/blog/${slug}`}
-            className="flex items-center gap-1 text-[#D4A843] text-sm font-medium hover:gap-2 transition-all"
+            className="flex items-center gap-1 text-[#7A5230] text-sm font-medium hover:gap-2 transition-all"
           >
             Leer más <ArrowRight className="w-3 h-3" />
           </Link>

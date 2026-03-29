@@ -45,10 +45,10 @@ export default async function ContactPage() {
     <div className="min-h-screen bg-[#F8F9FA] pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-14">
-          <span className="text-[#D4A843] font-medium text-sm uppercase tracking-widest">
+          <span className="text-[#C4A882] font-medium text-sm uppercase tracking-widest">
             Contacto
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#0A1628] mt-3 mb-4 font-[var(--font-heading)]">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#1A1A1A] mt-3 mb-4 font-[var(--font-heading)]">
             Estamos Aquí Para Ayudarle
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
@@ -60,14 +60,14 @@ export default async function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Contact details */}
           <AnimatedSection className="lg:col-span-2 space-y-6">
-            <div className="bg-[#0A1628] rounded-2xl p-8 space-y-7">
+            <div className="bg-[#1A1A1A] rounded-2xl p-8 space-y-7">
               {infoItems.map((item) => {
                 if (!item) return null;
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#D4A843]/10 rounded-lg flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-[#D4A843]" />
+                    <div className="w-10 h-10 bg-[#C4A882]/10 rounded-lg flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-[#C4A882]" />
                     </div>
                     <div>
                       <p className="text-white/40 text-xs uppercase tracking-wider mb-1">
@@ -76,7 +76,7 @@ export default async function ContactPage() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-white hover:text-[#D4A843] transition-colors whitespace-pre-line"
+                          className="text-white hover:text-[#C4A882] transition-colors whitespace-pre-line"
                         >
                           {item.value}
                         </a>
@@ -104,9 +104,9 @@ export default async function ContactPage() {
                 />
               </div>
             ) : (
-              <div className="rounded-2xl bg-[#0A1628]/10 h-48 flex items-center justify-center">
+              <div className="rounded-2xl bg-[#1A1A1A]/10 h-48 flex items-center justify-center">
                 <div className="text-center text-gray-400">
-                  <MapPin className="w-8 h-8 mx-auto mb-2 text-[#D4A843]" />
+                  <MapPin className="w-8 h-8 mx-auto mb-2 text-[#C4A882]" />
                   <p className="text-sm">Mapa disponible próximamente</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default async function ContactPage() {
             delay={0.2}
             className="lg:col-span-3 bg-white rounded-2xl p-8 shadow-sm"
           >
-            <h2 className="text-[#0A1628] font-semibold text-2xl mb-6 font-[var(--font-heading)]">
+            <h2 className="text-[#1A1A1A] font-semibold text-2xl mb-6 font-[var(--font-heading)]">
               Envíenos un Mensaje
             </h2>
             <ContactForm />

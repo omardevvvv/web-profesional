@@ -23,7 +23,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[#0A1628]/95 backdrop-blur-sm shadow-lg"
+          ? "bg-[#1A1A1A]/95 backdrop-blur-sm shadow-lg"
           : "bg-transparent"
       )}
     >
@@ -31,13 +31,13 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-[#D4A843] rounded-sm flex items-center justify-center">
-              <span className="text-[#0A1628] font-bold text-sm font-[var(--font-heading)]">
-                D
+            <div className="w-8 h-8 bg-[#C4A882] rounded-sm flex items-center justify-center">
+              <span className="text-[#1A1A1A] font-bold text-sm font-[var(--font-heading)]">
+                L
               </span>
             </div>
             <span className="text-white font-semibold text-lg tracking-wide hidden sm:block font-[var(--font-heading)]">
-              Despacho Contable
+              Laura Álvarez
             </span>
           </Link>
 
@@ -47,14 +47,14 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white/80 hover:text-[#D4A843] text-sm font-medium transition-colors duration-200"
+                className="text-white/80 hover:text-[#C4A882] text-sm font-medium transition-colors duration-200"
               >
                 {item.label}
               </Link>
             ))}
             <Button
               asChild
-              className="bg-[#D4A843] hover:bg-[#F0C75E] text-[#0A1628] font-semibold text-sm px-5"
+              className="bg-[#C4A882] hover:bg-[#D4B896] text-[#1A1A1A] font-semibold text-sm px-5"
             >
               <Link href="#contacto">Consulta Gratuita</Link>
             </Button>
@@ -70,22 +70,22 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-[#0A1628] border-[#1A2A4A] w-72"
+              className="bg-[#1A1A1A] border-[#2A2A2A] w-72 px-6"
             >
-              <div className="flex flex-col gap-6 mt-8">
+              <div className="flex flex-col gap-2 mt-10">
                 {NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="text-white/80 hover:text-[#D4A843] text-lg font-medium transition-colors"
+                    className="text-white/80 hover:text-[#C4A882] text-base font-medium transition-colors py-3 pl-2 border-b border-white/5"
                   >
                     {item.label}
                   </Link>
                 ))}
                 <Button
                   asChild
-                  className="bg-[#D4A843] hover:bg-[#F0C75E] text-[#0A1628] font-semibold mt-4"
+                  className="bg-[#C4A882] hover:bg-[#D4B896] text-[#1A1A1A] font-semibold mt-6"
                 >
                   <Link href="#contacto" onClick={() => setOpen(false)}>
                     Consulta Gratuita

@@ -36,28 +36,28 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A1628] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#1A1A1A] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-[#D4A843] rounded-xl mb-4">
-            <Building2 className="w-7 h-7 text-[#0A1628]" />
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-[#C4A882] rounded-xl mb-4">
+            <Building2 className="w-7 h-7 text-[#1A1A1A]" />
           </div>
           <h1 className="text-white text-2xl font-bold font-[var(--font-heading)]">
             Panel de Administración
           </h1>
-          <p className="text-white/40 text-sm mt-1">Despacho Contable y Fiscal</p>
+          <p className="text-white/40 text-sm mt-1">Laura Álvarez – Asesoría Fiscal y Contable</p>
         </div>
 
         {/* Form */}
         <div className="bg-white rounded-2xl p-8 shadow-2xl">
-          <h2 className="text-[#0A1628] font-semibold text-xl mb-6">
+          <h2 className="text-[#1A1A1A] font-semibold text-xl mb-6">
             Iniciar Sesión
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <Label htmlFor="email" className="text-[#0A1628] font-medium text-sm">
+              <Label htmlFor="email" className="text-[#1A1A1A] font-medium text-sm">
                 Email
               </Label>
               <div className="relative mt-1.5">
@@ -75,7 +75,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <Label htmlFor="password" className="text-[#0A1628] font-medium text-sm">
+              <Label htmlFor="password" className="text-[#1A1A1A] font-medium text-sm">
                 Contraseña
               </Label>
               <div className="relative mt-1.5">
@@ -108,7 +108,7 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#0A1628] hover:bg-[#1A2A4A] text-white h-11 font-semibold"
+              className="w-full bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white h-11 font-semibold"
             >
               {loading ? "Iniciando sesión..." : "Iniciar Sesión"}
             </Button>

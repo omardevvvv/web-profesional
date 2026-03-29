@@ -1,6 +1,6 @@
-import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
+import { uploadToCloudinary } from "@/lib/cloudinary";
 
 export async function POST(request: Request): Promise<NextResponse> {
   const session = await auth();
@@ -9,13 +9,21 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 
   const { searchParams } = new URL(request.url);
-  const filename = searchParams.get("filename");
+  const filename = searchParams.get("filename") ?? "upload";
+  const resourceType = (searchParams.get("resourceType") as "image" | "raw" | "auto") ?? "auto";
 
-  if (!filename || !request.body) {
+  if (!request.body) {
     return NextResponse.json({ error: "Falta el archivo" }, { status: 400 });
   }
 
-  const blob = await put(filename, request.body, { access: "public" });
+  const arrayBuffer = await request.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
 
-  return NextResponse.json(blob);
+  const result = await uploadToCloudinary(buffer, {
+    folder: resourceType === "image" ? "media" : "documents",
+    filename,
+    resourceType,
+  });
+
+  return NextResponse.json({ url: result.url, publicId: result.publicId });
 }

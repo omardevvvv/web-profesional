@@ -27,22 +27,22 @@ export function HeroSection({
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A1628]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1A1A1A]"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #C4A882 1px, transparent 0)`,
             backgroundSize: "48px 48px",
           }}
         />
       </div>
 
       {/* Gold gradient accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#D4A843]/5 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4A843]/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#C4A882]/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C4A882]/10 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
         <div className="max-w-3xl">
@@ -51,10 +51,10 @@ export function HeroSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-[#D4A843]/10 border border-[#D4A843]/30 rounded-full px-4 py-1.5 mb-8"
+            className="inline-flex items-center gap-2 bg-[#C4A882]/10 border border-[#C4A882]/30 rounded-full px-4 py-1.5 mb-8"
           >
-            <span className="w-2 h-2 bg-[#D4A843] rounded-full animate-pulse" />
-            <span className="text-[#D4A843] text-sm font-medium">
+            <span className="w-2 h-2 bg-[#C4A882] rounded-full animate-pulse" />
+            <span className="text-[#C4A882] text-sm font-medium">
               Despacho Profesional en Madrid
             </span>
           </motion.div>
@@ -88,7 +88,7 @@ export function HeroSection({
           >
             {highlights.map((h) => (
               <li key={h} className="flex items-center gap-2 text-white/60 text-sm">
-                <CheckCircle className="w-4 h-4 text-[#D4A843]" />
+                <CheckCircle className="w-4 h-4 text-[#C4A882]" />
                 {h}
               </li>
             ))}
@@ -104,7 +104,7 @@ export function HeroSection({
             <Button
               asChild
               size="lg"
-              className="bg-[#D4A843] hover:bg-[#F0C75E] text-[#0A1628] font-semibold text-base px-8 h-12"
+              className="bg-[#C4A882] hover:bg-[#D4B896] text-[#1A1A1A] font-semibold text-base px-8 h-12"
             >
               <Link href={ctaLink}>
                 {ctaText}

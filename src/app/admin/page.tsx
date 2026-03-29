@@ -20,7 +20,7 @@ export default async function AdminDashboard() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-[#0A1628] font-[var(--font-heading)]">
+        <h1 className="text-2xl font-bold text-[#1A1A1A] font-[var(--font-heading)]">
           Dashboard
         </h1>
         <p className="text-gray-500 mt-1">Resumen del estado de su sitio web</p>
@@ -38,7 +38,7 @@ export default async function AdminDashboard() {
                 <Icon className={`w-5 h-5 ${stat.color}`} />
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-[#0A1628]">{stat.value}</p>
+                <p className="text-3xl font-bold text-[#1A1A1A]">{stat.value}</p>
               </CardContent>
             </Card>
           );
@@ -47,7 +47,7 @@ export default async function AdminDashboard() {
 
       <Card className="border-0 shadow-sm">
         <CardHeader>
-          <CardTitle className="text-lg font-semibold text-[#0A1628]">
+          <CardTitle className="text-lg font-semibold text-[#1A1A1A]">
             Guía de uso del panel
           </CardTitle>
         </CardHeader>

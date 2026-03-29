@@ -40,10 +40,10 @@ export function ContactSection({ contactInfo }: ContactSectionProps) {
   ].filter(Boolean);
 
   return (
-    <section id="contacto" className="py-24 bg-[#0A1628]">
+    <section id="contacto" className="py-24 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <span className="text-[#D4A843] font-medium text-sm uppercase tracking-widest">
+          <span className="text-white/70 font-medium text-sm uppercase tracking-widest">
             Contacto
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4 font-[var(--font-heading)]">
@@ -63,8 +63,8 @@ export function ContactSection({ contactInfo }: ContactSectionProps) {
               const Icon = item.icon;
               return (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#D4A843]/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-[#D4A843]" />
+                  <div className="w-10 h-10 bg-[#C4A882]/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-[#C4A882]" />
                   </div>
                   <div>
                     <p className="text-white/40 text-xs uppercase tracking-wider mb-1">
@@ -73,7 +73,7 @@ export function ContactSection({ contactInfo }: ContactSectionProps) {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-white hover:text-[#D4A843] transition-colors whitespace-pre-line"
+                        className="text-white hover:text-[#D4B896] transition-colors whitespace-pre-line"
                       >
                         {item.value}
                       </a>
@@ -91,7 +91,7 @@ export function ContactSection({ contactInfo }: ContactSectionProps) {
             delay={0.2}
             className="lg:col-span-3 bg-white rounded-2xl p-8"
           >
-            <h3 className="text-[#0A1628] font-semibold text-xl mb-6 font-[var(--font-heading)]">
+            <h3 className="text-[#1A1A1A] font-semibold text-xl mb-6 font-[var(--font-heading)]">
               Envíenos un Mensaje
             </h3>
             <ContactForm />

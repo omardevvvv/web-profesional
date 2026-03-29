@@ -59,7 +59,7 @@ export function RichTextEditor({
       title={title}
       className={cn(
         "p-2 rounded hover:bg-gray-100 transition-colors",
-        active && "bg-[#D4A843]/20 text-[#D4A843]"
+        active && "bg-[#C4A882]/20 text-[#C4A882]"
       )}
     >
       {children}

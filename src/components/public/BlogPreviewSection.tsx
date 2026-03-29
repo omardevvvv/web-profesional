@@ -26,16 +26,16 @@ export function BlogPreviewSection({ posts }: BlogPreviewSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-[#D4A843] font-medium text-sm uppercase tracking-widest">
+            <span className="text-[#7A5230] font-medium text-sm uppercase tracking-widest">
               Noticias y Novedades
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0A1628] mt-3 font-[var(--font-heading)]">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A] mt-3 font-[var(--font-heading)]">
               Últimas Publicaciones
             </h2>
           </div>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-[#0A1628] font-medium hover:text-[#D4A843] transition-colors shrink-0"
+            className="flex items-center gap-2 text-[#1A1A1A] font-medium hover:text-[#7A5230] transition-colors shrink-0"
           >
             Ver todo el blog <ArrowRight className="w-4 h-4" />
           </Link>

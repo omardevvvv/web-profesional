@@ -22,7 +22,7 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
     setLoading(true);
     try {
       const response = await fetch(
-        `/api/upload?filename=${encodeURIComponent(file.name)}`,
+        `/api/upload?filename=${encodeURIComponent(file.name)}&resourceType=image`,
         {
           method: "POST",
           body: file,
@@ -31,10 +31,10 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
 
       if (!response.ok) throw new Error("Upload failed");
 
-      const blob = await response.json();
-      onChange(blob.url);
+      const data = await response.json();
+      onChange(data.url);
     } catch {
-      alert("Error al subir la imagen. Verifique que BLOB_READ_WRITE_TOKEN esté configurado.");
+      alert("Error al subir la imagen. Verifique que las variables CLOUDINARY_* estén configuradas.");
     } finally {
       setLoading(false);
     }
@@ -58,7 +58,7 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
       ) : (
         <div
           onClick={() => inputRef.current?.click()}
-          className="w-full h-48 border-2 border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-[#D4A843] hover:bg-[#D4A843]/5 transition-colors"
+          className="w-full h-48 border-2 border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-[#C4A882] hover:bg-[#C4A882]/5 transition-colors"
         >
           {loading ? (
             <p className="text-sm text-gray-500">Subiendo imagen...</p>

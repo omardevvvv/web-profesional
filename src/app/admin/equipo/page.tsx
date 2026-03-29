@@ -13,10 +13,10 @@ export default async function EquipoAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-[#0A1628] font-[var(--font-heading)]">Equipo</h1>
+          <h1 className="text-2xl font-bold text-[#1A1A1A] font-[var(--font-heading)]">Equipo</h1>
           <p className="text-gray-500 mt-1">Gestione los miembros del equipo</p>
         </div>
-        <Button asChild className="bg-[#0A1628] hover:bg-[#1A2A4A] text-white">
+        <Button asChild className="bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white">
           <Link href="/admin/equipo/nuevo"><Plus className="w-4 h-4 mr-2" />Nuevo miembro</Link>
         </Button>
       </div>
@@ -36,14 +36,14 @@ export default async function EquipoAdminPage() {
               <tr key={member.id} className="hover:bg-gray-50/50">
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-[#0A1628] flex items-center justify-center overflow-hidden shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[#1A1A1A] flex items-center justify-center overflow-hidden shrink-0">
                       {member.photoUrl ? (
                         <Image src={member.photoUrl} alt={member.name} width={36} height={36} className="object-cover w-full h-full" />
                       ) : (
-                        <span className="text-[#D4A843] text-sm font-bold">{member.name.charAt(0)}</span>
+                        <span className="text-[#C4A882] text-sm font-bold">{member.name.charAt(0)}</span>
                       )}
                     </div>
-                    <p className="font-medium text-[#0A1628] text-sm">{member.name}</p>
+                    <p className="font-medium text-[#1A1A1A] text-sm">{member.name}</p>
                   </div>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-500">{member.role}</td>
